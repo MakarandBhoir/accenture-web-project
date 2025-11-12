@@ -3,9 +3,11 @@ trigger:
 
 variables:
   agent-name: windows-latest
+  my-agent-pool: accenture-pool
 
 pool:
-  vmImage: $(agent-name)
+  # vmImage: $(agent-name)
+  name: $(my-agent-pool)
 
 steps:
   - script: |
