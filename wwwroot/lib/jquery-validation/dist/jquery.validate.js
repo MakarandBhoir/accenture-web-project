@@ -1068,7 +1068,16 @@ $.extend( $.validator, {
 				element = this.findByName( element.name );
 			}
 
-			// Always apply ignore filter
+			// Always apply ignore filter, but ensure no HTML string is passed as a selector
+			if (typeof element === "string") {
+				// Prevent HTML injection by rejecting strings starting with "<"
+				if (element.trim().charAt(0) === "<") {
+					if (window.console) {
+						console.error("Unsafe selector passed to validationTargetFor: '" + element + "'");
+					}
+					return undefined;
+				}
+			}
 			return $( element ).not( this.settings.ignore )[ 0 ];
 		},
 
