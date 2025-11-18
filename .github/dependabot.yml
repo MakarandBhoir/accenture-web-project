@@ -1,13 +1,5 @@
 version: 2
 updates:
-  # NuGet package updates (for .NET)
-  - package-ecosystem: "nuget"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 5
-
-  # GitHub Actions updates (same for all languages)
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
