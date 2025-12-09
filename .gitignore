@@ -111,9 +111,6 @@ ehthumbs.db
 # Node modules (if using React or Angular with MVC)
 node_modules/
 
-# Environment files
-.env
-.env.*
 
 # Tooling
 *.coverage
